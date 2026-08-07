@@ -1,24 +1,21 @@
-// C++ Program to illustrate 2D Array
 #include <iostream>
 using namespace std;
-
 int main() {
-
-    // Declaring and initializing a 2D array
-    int arr[2][3] = {
-        {10, 20, 30},
-        {40, 50, 60}
+   //int rows = 4, cols = 4;
+    // Fill the array with non-random numbers (e.g., sequential numbers)
+    cout << "2D Array with Non-Random Numbers:\n";
+    int value = 1; // Starting value
+    int array[4][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
     };
-
-    cout << "2D Array:" << endl;
-
-    // Printing the 2D array
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << arr[i][j] << " ";
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4;  j++) {
+            cout << array[i][j] << "\t";
         }
-        cout << endl;
+        cout << "\n";
     }
-
     return 0;
 }
