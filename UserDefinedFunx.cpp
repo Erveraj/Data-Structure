@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int add(int a, int b) {
-    return a + b;
+void funx(){
+int a, b;
+cout<<"Enter first number: ";
+cin>>a;
+cout<<"Enter second number: ";
+cin>>b;
+cout<<"Sum of "<<a<<" and "<<b<<" is: "<<a+b<<endl;
 }
 
 int main() {
-    int num1, num2;
-    cout << "Enter first number: ";
-    cin >> num1;
-    cout << "Enter second number: ";
-    cin >> num2;
-    int sum = add(num1, num2);
-    cout << "Sum = " << sum << endl;
+    cout<<"Hello its me, User Defined Function"<<endl;
+    funx();
+    cout<<"Thank you for using my function"<<endl;
     return 0;
 }
