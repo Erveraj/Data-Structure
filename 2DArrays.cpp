@@ -4,7 +4,7 @@ int main() {
    //int rows = 4, cols = 4;
     // Fill the array with non-random numbers (e.g., sequential numbers)
     cout << "2D Array with Non-Random Numbers:\n";
-    int value = 1; // Starting value
+    //int value = 1; // Starting value
     int array[4][4] = {
         {1, 2, 3, 4},
         {5, 6, 7, 8},
