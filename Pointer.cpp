@@ -13,7 +13,6 @@ int main(){
 	cout << &ptr1 << endl;
 	cout << ptr1 << endl;
 	*/
-
 	int i=10, j=40, k=10;
 	cout<< "Sum of i, j, and k: " << i + j + k <<endl;
 	cout<<"Address of i: " << &i << "\n" << "Address of j: " << &j << "\n" << "Address of k: " << &k <<endl;
