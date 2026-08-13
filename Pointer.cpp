@@ -9,9 +9,9 @@ int main(){
 	cout << &food << endl;
 	
 // create a pointer variable that holds the address of food
-	string* ptr = &food;
-	cout << &ptr << endl;
-	cout << ptr << endl;
+	string* ptr1 = &food;
+	cout << &ptr1 << endl;
+	cout << ptr1 << endl;
 	*/
 
 	int i=10, j=40, k=10;
