@@ -7,7 +7,6 @@ int main() {
     
     cout << "Enter your age: ";
     cin >> age;
-    
     switch(age >= 18) {
         case 1:  // age >= 18 is true
             cout << "You are an Adult" << endl;
