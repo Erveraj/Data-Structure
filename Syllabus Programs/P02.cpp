@@ -18,7 +18,6 @@ int main()
 
     for (int i = n; i > pos; i--)
         arr[i] = arr[i - 1];
-
     arr[pos] = value;
     n++;
 
