@@ -1,106 +1,40 @@
+//Program to demonstrate stack operations in C++
 #include <iostream>
+#include <stack>
 using namespace std;
-
-#define MAX 100
-
-class Stack {
-private:
-    int arr[MAX];
-    int top;
-
-public:
-    Stack() {
-        top = -1;
-    }
-
-    bool isFull() {
-        return top == MAX - 1;
-    }
-
-    bool isEmpty() {
-        return top == -1;
-    }
-
-    void push(int x) {
-        if (isFull()) {
-            cout << "Stack Overflow!\n";
-            return;
-        }
-        arr[++top] = x;
-        cout << x << " pushed to stack\n";
-    }
-
-    int pop() {
-        if (isEmpty()) {
-            cout << "Stack Underflow!\n";
-            return -1;
-        }
-        return arr[top--];
-    }
-
-    int peek() {
-        if (isEmpty()) {
-            cout << "Stack is empty!\n";
-            return -1;
-        }
-        return arr[top];
-    }
-
-    void display() {
-        if (isEmpty()) {
-            cout << "Stack is empty!\n";
-            return;
-        }
-        cout << "Stack elements: ";
-        for (int i = top; i >= 0; i--) {
-            cout << arr[i] << " ";
-        }
-        cout << "\n";
-    }
-};
-
 int main() {
-    Stack s;
-    int choice, value;
+stack<int> rollno;
+rollno.push(123);
+rollno.push(456);
+rollno.push(789);
+cout << "Top element: " << rollno.top() << endl;
+cout << "Size of stack: " << rollno.size() << endl;
+rollno.pop();
+cout << "Top element after pop: " << rollno.top() << endl;
+cout << "Is stack empty? " << (rollno.empty() ? "Yes" : "No") << endl;
 
-    while (true) {
-        cout << "\n--- Stack Operations ---\n";
-        cout << "1. Push\n";
-        cout << "2. Pop\n";
-        cout << "3. Peek\n";
-        cout << "4. Display\n";
-        cout << "5. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
+cout << "\n\nMethod 2 using a string data type.\n" << endl;
 
-        switch (choice) {
-            case 1:
-                cout << "Enter value to push: ";
-                cin >> value;
-                s.push(value);
-                break;
-            case 2:
-                value = s.pop();
-                if (value != -1) {
-                    cout << value << " popped from stack\n";
-                }
-                break;
-            case 3:
-                value = s.peek();
-                if (value != -1) {
-                    cout << "Top element: " << value << "\n";
-                }
-                break;
-            case 4:
-                s.display();
-                break;
-            case 5:
-                cout << "Exiting...\n";
-                return 0;
-            default:
-                cout << "Invalid choice!\n";
-        }
-    }
+stack<string> car;
+car.push("BMW");
+car.push("Audi");
+car.push("Mercedes");
+cout << "Top element: " << car.top() << endl;
+cout << "Size of Stack: "<< car.size() << endl;
+cout << "Is stack empty? " << (car.empty() ? "Yes" : "No") << endl;
+car.pop();
+cout << "Top Element after pop: "<< car.top() << endl;
 
-    return 0;
 }
+
+/*
+
+Function                    Purpose
+#######################################################
+push()	            Adds an element to the top
+pop()	            Removes the top element
+top()	            Returns/shows the top element
+empty()	            Checks whether the stack is empty
+size()	            Returns the number of elements
+
+*/
