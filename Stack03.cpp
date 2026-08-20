@@ -1,4 +1,4 @@
-//Change the Top Element in stack
+//How to Change the Top Element in stack
 #include <iostream>
 #include <stack>
 using namespace std;
