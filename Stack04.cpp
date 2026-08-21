@@ -14,11 +14,17 @@ int main() {
     Students.push("Diksha");
 
     cout<< "The size of the stack is: " << Students.size() << endl;
-  cout << Students.top();
+  cout << "The name of Student is:"<< Students.top();
+  
+
+  stack<int> rollno;
+  rollno.push(123);
+  rollno.push(321);
+  rollno.push(456);
+  rollno.push(987);
+  
+  cout<<"\nThe roll no of Diksha is a: "<< rollno.top();
+
+  
   return 0;
-
-  //stack<int> model;
-
-  
-  
 }
