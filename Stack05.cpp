@@ -1,6 +1,6 @@
-#include <iostream>  // This heardfile use for innput and output funtion.
+#include <iostream>  // This headerfile use for input and output functions
 #include <stack>     // This headerfile use for the stack
-using namespace std;    // This alow us to use i/p and o/p funx withou :: Soperesolution operator 
+using namespace std;    // This allow us to use i/p and o/p functions without :: scope resolution operator 
 int main(){             // Main function
 stack<string> StudentName;      //We are creating a stack
 StudentName.push("Garima");     // We are storing an data into our stack
