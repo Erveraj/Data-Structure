@@ -1,3 +1,4 @@
+// In this program we will implement two stacks in a single array.
 #include <iostream>
 #include <stdlib.h>
 
