@@ -1,87 +1,118 @@
-// In this program we will implement two stacks in a single array.
 #include <iostream>
-#include <stdlib.h>
-
 using namespace std;
 
-class twoStacks
+class TwoStacks
 {
     int *arr;
     int size;
-    int mid;
-    int top1, top2;
+    int top1;
+    int top2;
 
-  public:
-    twoStacks(int n)
+public:
+
+    // Constructor
+    TwoStacks(int n)
     {
         size = n;
-        arr = new int[n];
-        mid = n / 2;
+        arr = new int[size];
 
-        // top1 starts from 0
+        // S1 starts from left
         top1 = -1;
 
-        // top2 starts from mid
-        top2 = mid - 1;
+        // S2 starts from right
+        top2 = size;
     }
 
-    void push1(int x)
+    // Push element into Stack 1
+    void push1(int value)
     {
-        if (top1 == mid - 1)
+        // Check overflow
+        if (top1 + 1 == top2)
         {
-            // top1 reaches middle of the array
-            // so stack1 is full
+            cout << "Stack Overflow!" << endl;
             return;
         }
+
         top1++;
-        arr[top1] = x;
+        arr[top1] = value;
     }
 
-    void push2(int x)
+    // Push element into Stack 2
+    void push2(int value)
     {
-        if (top2 == size - 1)
+        // Check overflow
+        if (top1 + 1 == top2)
         {
-            // top2 reaches end of the array
-            // so stack2 is full
+            cout << "Stack Overflow!" << endl;
             return;
         }
-        top2++;
-        arr[top2] = x;
+
+        top2--;
+        arr[top2] = value;
     }
 
+    // Pop from Stack 1
     int pop1()
     {
         if (top1 == -1)
         {
-            // that means stack1 in empty so return -1
+            cout << "Stack 1 Underflow!" << endl;
             return -1;
         }
-        int ele = arr[top1];
+
+        int value = arr[top1];
         top1--;
-        return ele;
+
+        return value;
     }
 
+    // Pop from Stack 2
     int pop2()
     {
-        if (top2 == mid - 1)
+        if (top2 == size)
         {
-            // that means stack2 in empty so return -1
+            cout << "Stack 2 Underflow!" << endl;
             return -1;
         }
-        int ele = arr[top2];
-        top2--;
-        return ele;
+
+        int value = arr[top2];
+        top2++;
+
+        return value;
+    }
+
+    // Display entire array
+    void display()
+    {
+        cout << "\nArray: ";
+
+        for (int i = 0; i < size; i++)
+        {
+            cout << arr[i] << " ";
+        }
+
+        cout << endl;
+
+        cout << "Top1 = " << top1 << endl;
+        cout << "Top2 = " << top2 << endl;
     }
 };
 
 int main()
 {
-    twoStacks ts(5);
-    ts.push1(2);
-    ts.push1(3);
-    ts.push2(4);
-    cout << ts.pop1() << " ";
-    cout << ts.pop2() << " ";
-    cout << ts.pop2() << " ";
+    TwoStacks s(8);
+
+    // Stack 1
+    s.push1(123);
+    s.push1(345);
+    s.push1(456);
+
+    // Stack 2
+    s.push2(654);
+    s.push2(543);
+    s.push2(321);
+
+    s.display();
+
     return 0;
 }
