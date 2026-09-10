@@ -88,12 +88,10 @@ int main()
 
     dequeue();
     dequeue();
-
     display();
 
     enqueue(60);
     enqueue(70);
-
     display();
 
     return 0;
