@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-/*int main() {
+int main() {
   struct {
     int age;
     string name;
@@ -23,25 +23,4 @@ using namespace std;
   cout << "Age of Person1: " << person1.age << "\n";
   cout << "Name of Person1: " << person1.name << "\n";
   return 0;
-}*/
-
-class Person{
-    public:
-    int age;
-    string name;
-};
-
-int main(){
-    Person person1, person2;
-    person1.age = 19;
-    person1.name = "Krishdeep Singh";
-
-    person2.age = 20;
-    person2.name = "Shivam Singh";  
-
-    cout<< "Age of Person1: "<<person1.age<<"\n";
-    cout<< "Name of Person1: "<<person1.name<<"\n";
-    cout<< "Age of Person2: "<<person2.age<<"\n";
-    cout<< "Name of Person2: "<<person2.name<<"\n";
-
 }
