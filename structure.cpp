@@ -18,6 +18,7 @@ int main() {
   person1.age = 20;
   person1.name = "Shivam Singh";
 
+  cout<<"==================================================\n";
   cout << "Age of Person: " << person.age << "\n";
   cout << "Name of Person: " << person.name << "\n";
   cout << "Age of Person1: " << person1.age << "\n";
