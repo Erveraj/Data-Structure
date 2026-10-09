@@ -30,7 +30,44 @@ Node* insert(Node* root, int value) {
     return root;
 }
 
-// Display BST in sorted order
+// Search and display position
+bool search(Node* root, int key, int level, Node* parent) {
+    if (root == NULL) {
+        return false;
+    }
+
+    if (root->data == key) {
+        cout << "\nElement found: " << key << endl;
+        cout << "Level: " << level << endl;
+
+        if (parent == NULL) {
+            cout << key << " is the root node.";
+        }
+        else {
+            cout << "Parent Node: " << parent->data << endl;
+
+            if (key < parent->data) {
+                cout << key << " is on the left side of "
+                     << parent->data << ".";
+            }
+            else {
+                cout << key << " is on the right side of "
+                     << parent->data << ".";
+            }
+        }
+
+        return true;
+    }
+
+    if (key < root->data) {
+        return search(root->left, key, level + 1, root);
+    }
+    else {
+        return search(root->right, key, level + 1, root);
+    }
+}
+
+// Inorder traversal
 void inorder(Node* root) {
     if (root == NULL) {
         return;
@@ -56,5 +93,15 @@ int main() {
     cout << "Inorder Traversal: ";
     inorder(root);
 
+    int key;
+    cout << "\n\nEnter element to search: ";
+    cin >> key;
+
+    if (!search(root, key, 1, NULL)) {
+        cout << "Element not found in BST.";
+    }
+
+    cout << endl;
     return 0;
 }
+

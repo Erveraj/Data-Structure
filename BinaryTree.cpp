@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -5,7 +6,8 @@ using namespace std;
 class Node {
 public:
     int data;
-    Node* left, * right;
+    Node* left;
+    Node* right;
 
     Node(int key) {
         data = key;
@@ -14,24 +16,30 @@ public:
     }
 };
 
-int main(){
-    // Initilize and allocate memory for tree nodes
-    Node* firstNode = new Node(2);
+int main() {
+    // Create tree nodes
+    Node* firstNode = new Node(6);
     Node* secondNode = new Node(3);
-    Node* thirdNode = new Node(4);
+    Node* thirdNode = new Node(8);
     Node* fourthNode = new Node(5);
 
-    // Connect binary tree nodes
+    // Connect nodes according to BST rules
     firstNode->left = secondNode;
     firstNode->right = thirdNode;
-    secondNode->left = fourthNode;
+    secondNode->right = fourthNode;
 
-    //Display binary tree
+    // Display tree structure
+    cout << "Root Node: "
+         << firstNode->data << endl;
 
-    cout << "Root Node: " << firstNode->data << endl;
-    cout << "Left Child of Root Node: " << firstNode->left->data << endl;
-    cout << "Right Child of Root Node: " << firstNode->right->data << endl;
-    cout << "Left Child of Left Child of Root Node: " << firstNode->left->left->data << endl;
-    cout << "Right Child of Left Child of Root Node: " << firstNode->left->right << endl; // This will print nullptr since there is no right child for the second node
+    cout << "Left Child of Root: "
+         << firstNode->left->data << endl;
+
+    cout << "Right Child of Root: "
+         << firstNode->right->data << endl;
+
+    cout << "Right Child of Left Child of Root: "
+         << firstNode->left->right->data << endl;
+
     return 0;
 }
