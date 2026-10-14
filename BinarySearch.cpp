@@ -89,6 +89,8 @@ int main() {
     insert(root, 90);
     insert(root, 60);
     insert(root, 1);
+    insert(root, 10);
+    insert(root, 100);
 
     cout << "Inorder Traversal: ";
     inorder(root);
