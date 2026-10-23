@@ -1,4 +1,4 @@
-
+//Program to demonstrate a simple hash function
 #include <iostream>
 using namespace std;
 
